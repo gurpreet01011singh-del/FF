@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Custom Tournament - Battle Royale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #b0bec5;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .plans-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .plan-card {
+            background: #2c2c2c;
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #ff9800;
+        }
+        .plan-info h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #ffffff;
+            text-align: left;
+        }
+        .plan-info p {
+            margin: 3px 0 0;
+            font-size: 13px;
+            color: #4caf50;
+            font-weight: bold;
+            text-align: left;
+        }
+        .join-btn {
+            background: #ff9800;
+            color: #121212;
+            border: none;
+            padding: 8px 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .scanner-section {
+            background: #252525;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .scanner-section img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            background: #fff;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+        label {
+            font-size: 13px;
+            color: #cfd8dc;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background: #121212;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background: #43a047;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔥 Free Fire Custom Wars 🔥</h1>
+        <p class="subtitle">Match Khelo, Paise Jeeto!</p>
+
+        <!-- Plans Section -->
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-info">
+                    <h3>Plan 1: Entry ₹10</h3>
+                    <p>Win: ₹300</p>
+                </div>
+                <button class="join-btn" onclick="selectPlan('Plan 1 (Entry ₹10)')">Join</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-info">
+                    <h3>Plan 2: Entry ₹20</h3>
+                    <p>Win: ₹600</p>
+                </div>
+                <button class="join-btn" onclick="selectPlan('Plan 2 (Entry ₹20)')">Join</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-info">
+                    <h3>Plan 3: Entry ₹30</h3>
+                    <p>Win: ₹1000</p>
+                </div>
+                <button class="join-btn" onclick="selectPlan('Plan 3 (Entry ₹30)')">Join</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-info">
+                    <h3>Plan 4: Entry ₹40</h3>
+                    <p>Win: ₹1500</p>
+                </div>
+                <button class="join-btn" onclick="selectPlan('Plan 4 (Entry ₹40)')">Join</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-info">
+                    <h3>Plan 5: Entry ₹50</h3>
+                    <p>Win: ₹1800</p>
+                </div>
+                <button class="join-btn" onclick="selectPlan('Plan 5 (Entry ₹50)')">Join</button>
+            </div>
+        </div>
+
+        <!-- Scanner Section -->
+        <div class="scanner-section">
+            <h3 style="margin:0 0 5px 0; color:#ff9800;">Step 1: Payment Karo</h3>
+            <p style="font-size: 12px; color:#aaa; margin:0;">Is QR Code par UPI payment karke UTR/Txn ID note kar lo.</p>
+            <!-- Aapka scanner image file -->
+            <img src="scanner.jpg" alt="UPI QR Scanner">
+            <p style="font-size: 13px; color: #ff9800; margin-top: 8px;">UPI ID: <b>7589366285@fam</b>[span_1](start_span)[span_1](end_span)</p>
+        </div>
+
+        <!-- Registration Form -->
+        <h3 style="margin-bottom: 10px; color:#ff9800;">Step 2: Details Bharein</h3>
+        <form action="#" method="POST" onsubmit="alert('Details submitted successfully! Admin verify karke room ID bhej dega.'); return false;">
+            <div>
+                <label>Selected Plan:</label>
+                <input type="text" id="selectedPlan" value="Plan 1 (Entry ₹10)" readonly>
+            </div>
+            <div>
+                <label>Aapka Naam:</label>
+                <input type="text" placeholder="Apna naam likho" required>
+            </div>
+            <div>
+                <label>Free Fire Username:</label>
+                <input type="text" placeholder="FF in-game name" required>
+            </div>
+            <div>
+                <label>Free Fire UID (ID Number):</label>
+                <input type="text" placeholder="Jaise: 123456789" required>
+            </div>
+            <div>
+                <label>Transaction ID / UTR Number:</label>
+                <input type="text" placeholder="Payment karne ke baad ka UTR/Txn ID" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit Details</button>
+        </form>
+    </div>
+
+    <script>
+        function selectPlan(planName) {
+            document.getElementById('selectedPlan').value = planName;
+            alert(planName + " select ho gaya hai! Neeche form mein apni details bharo.");
+        }
+    </script>
+
+</body>
+</html>
